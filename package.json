@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "dateformat": "^4.5.1",
+    "got": "^11.8.2",
+    "node-forge": "^0.10.0",
+    "tough-cookie": "^4.0.0"
+  }
+}
