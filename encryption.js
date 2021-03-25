@@ -1,3 +1,5 @@
+const forge = require('node-forge');
+
 class Encryption {
     constructor(card) {
         this.publicKey
