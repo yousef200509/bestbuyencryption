@@ -40,9 +40,8 @@ class Encryption {
 
     async encrypt() {
         const publicKey = forge.pki.publicKeyFromPem(`-----BEGIN PUBLIC KEY-----${this.publicKey}-----END PUBLIC KEY-----`);
-        const encryptionType = `${this.encryptionType}`;
         const e = forge.pkcs1.encode_rsa_oaep(publicKey, `${this.terminalNo}` + this.card, {
-            md: forge.md[encryptionType].create(),
+            md: forge.md[this.encryptionType].create(),
         });
         const ciphertext = forge.pki.rsa.encrypt(e, publicKey, true);
         this.encryptedCard =  forge.util.encode64(ciphertext) + this.card.substring(this.card.length, this.card.length - 4)
